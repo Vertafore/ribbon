@@ -28,4 +28,27 @@ subprojects {
             maven { url 'http://oss.jfrog.org/oss-snapshot-local' }
         }
     }
+
+    artifactory {
+        contextUrl = 'http://devutl1.sircon.com:8081/artifactory/'
+        publish {
+            repository {
+                repoKey = "libs-${buildType}-local"
+                username = 'developer'
+                password = 'j@rj@r|3i|\\|k5'
+                maven = true
+            }
+            defaults {
+                publications ('ribbonLibrary')
+            }
+        }
+    }
+
+    publishing {
+        publications {
+            ribbonLibrary(MavenPublication) {
+                from components.java
+            }
+        }
+    }
 }
