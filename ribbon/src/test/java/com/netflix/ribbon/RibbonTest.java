@@ -30,6 +30,8 @@ import io.reactivex.netty.protocol.http.client.HttpClientResponse;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -52,6 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.junit.Assert.*;
 
 public class RibbonTest {
+
+    private MockWebServer server;
     
     private static String toStringBlocking(RibbonRequest<ByteBuf> request) {
         return request.toObservable().map(new Func1<ByteBuf, String>() {
@@ -67,10 +71,23 @@ public class RibbonTest {
     public static void init() {
         LogManager.getRootLogger().setLevel(Level.DEBUG);
     }
+
+    @Before
+    public void setup() {
+        server = new MockWebServer();
+    }
+
+    @After
+    public void shutdown() {
+        try {
+            server.shutdown();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
     @Test
     public void testCommand() throws IOException, InterruptedException, ExecutionException {
-        MockWebServer server = new MockWebServer();
         String content = "Hello world";
         MockResponse response = new MockResponse()
             .setResponseCode(200)
@@ -109,7 +126,6 @@ public class RibbonTest {
     @Test
     public void testHystrixCache() throws IOException {
         // LogManager.getRootLogger().setLevel((Level)Level.DEBUG);
-        MockWebServer server = new MockWebServer();
         String content = "Hello world";
         MockResponse response = new MockResponse()
             .setResponseCode(200)
@@ -143,7 +159,6 @@ public class RibbonTest {
     @Ignore
     public void testCommandWithMetaData() throws IOException, InterruptedException, ExecutionException {
         // LogManager.getRootLogger().setLevel((Level)Level.DEBUG);
-        MockWebServer server = new MockWebServer();
         String content = "Hello world";
         for (int i = 0; i < 6; i++) {
             server.enqueue(new MockResponse()
@@ -202,7 +217,6 @@ public class RibbonTest {
     @Test
     public void testValidator() throws IOException, InterruptedException {
         // LogManager.getRootLogger().setLevel((Level)Level.DEBUG);
-        MockWebServer server = new MockWebServer();
         String content = "Hello world";
         server.enqueue(new MockResponse()
                 .setResponseCode(200)
@@ -324,7 +338,6 @@ public class RibbonTest {
     
     @Test
     public void testObserve() throws IOException, InterruptedException {
-        MockWebServer server = new MockWebServer();
         String content = "Hello world";
         server.enqueue(new MockResponse()
                 .setResponseCode(200)
@@ -387,7 +400,6 @@ public class RibbonTest {
     
     @Test
     public void testCacheMiss() throws IOException, InterruptedException {
-        MockWebServer server = new MockWebServer();
         String content = "Hello world";
         server.enqueue(new MockResponse()
                 .setResponseCode(200)

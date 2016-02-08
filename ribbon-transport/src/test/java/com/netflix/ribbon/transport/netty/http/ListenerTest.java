@@ -162,6 +162,12 @@ public class ListenerTest {
         assertTrue(listener.isContextChecked());
         assertTrue(listener.isCheckExecutionInfo());
         assertSame(response, listener.getResponse());
+
+        try {
+            server.shutdown();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -199,6 +205,12 @@ public class ListenerTest {
         assertTrue(listener.isContextChecked());
         assertTrue(listener.isCheckExecutionInfo());
         assertSame(response, listener.getResponse());
+
+        try {
+            server.shutdown();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

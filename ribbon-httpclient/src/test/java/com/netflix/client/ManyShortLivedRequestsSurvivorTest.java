@@ -61,6 +61,18 @@ public class ManyShortLivedRequestsSurvivorTest {
             HttpResponse response = client.executeWithLoadBalancer(request);
             response.close();
         }
+
+        try {
+            server1.shutdown();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            server2.shutdown();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     static String hostAndPort(URL url) {
