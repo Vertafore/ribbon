@@ -39,16 +39,10 @@ subprojects {
                 maven = true
             }
             defaults {
-                publications ('ribbonLibrary')
+                publications ('mavenNebula')
             }
         }
+        clientConfig.info.setBuildName("vertafore-${project.name}")
     }
 
-    publishing {
-        publications {
-            ribbonLibrary(MavenPublication) {
-                from components.java
-            }
-        }
-    }
 }

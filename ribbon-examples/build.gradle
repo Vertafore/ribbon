@@ -1,9 +1,9 @@
 dependencies {
-    compile project(':ribbon-core')
-    compile project(':ribbon-httpclient')
-    compile project(':ribbon-transport')
-    compile project(':ribbon-loadbalancer')
-    compile project(':ribbon')
+    compile project(':vertafore-ribbon-core')
+    compile project(':vertafore-ribbon-httpclient')
+    compile project(':vertafore-ribbon-transport')
+    compile project(':vertafore-ribbon-loadbalancer')
+    compile project(':vertafore-ribbon')
     compile "io.reactivex:rxjava:${rx_java_version}"
     compile "io.reactivex:rxnetty:${rx_netty_version}"
     compile "com.netflix.hystrix:hystrix-core:${hystrix_version}"

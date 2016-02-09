@@ -1,5 +1,5 @@
 dependencies {
-    compile project(':ribbon-core')
+    compile project(':vertafore-ribbon-core')
     compile 'com.netflix.netflix-commons:netflix-statistics:0.1.1'
     compile "io.reactivex:rxjava:${rx_java_version}"
     compile 'org.slf4j:slf4j-api:1.6.4'

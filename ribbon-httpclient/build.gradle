@@ -1,6 +1,6 @@
 dependencies {
-    compile project(':ribbon-core')
-    compile project(':ribbon-loadbalancer')
+    compile project(':vertafore-ribbon-core')
+    compile project(':vertafore-ribbon-loadbalancer')
     compile 'commons-collections:commons-collections:3.2.1'        
     compile 'org.apache.httpcomponents:httpclient:4.2.1'
     compile 'com.google.code.findbugs:annotations:2.0.0' 
@@ -16,5 +16,5 @@ dependencies {
     testCompile 'commons-io:commons-io:2.0.1'
     testCompile "com.sun.jersey:jersey-server:${jersey_version}"
     testCompile 'com.google.mockwebserver:mockwebserver:20130505'
-    testCompile project(":ribbon-loadbalancer").sourceSets.test.output
+    testCompile project(":vertafore-ribbon-loadbalancer").sourceSets.test.output
 }

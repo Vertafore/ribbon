@@ -1,7 +1,7 @@
 dependencies {
-    compile project(':ribbon-core')
-    compile project(':ribbon-loadbalancer')
-    compile project(':ribbon-eureka')
+    compile project(':vertafore-ribbon-core')
+    compile project(':vertafore-ribbon-loadbalancer')
+    compile project(':vertafore-ribbon-eureka')
     compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.11'
     compile 'com.netflix.eureka:eureka-client:1.1.142'
     compile "io.reactivex:rxjava:${rx_java_version}"

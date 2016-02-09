@@ -1,2 +1,13 @@
 rootProject.name='ribbon'
 include 'ribbon-core', 'ribbon-loadbalancer', 'ribbon-httpclient', 'ribbon-eureka', 'ribbon-transport', 'ribbon-examples', 'ribbon-test', 'ribbon-guice', 'ribbon', 'ribbon-evcache'
+
+project(':ribbon-core').name = 'vertafore-ribbon-core'
+project(':ribbon-loadbalancer').name = 'vertafore-ribbon-loadbalancer'
+project(':ribbon-httpclient').name = 'vertafore-ribbon-httpclient'
+project(':ribbon-eureka').name = 'vertafore-ribbon-eureka'
+project(':ribbon-transport').name = 'vertafore-ribbon-transport'
+project(':ribbon-examples').name = 'vertafore-ribbon-examples'
+project(':ribbon-test').name = 'vertafore-ribbon-test'
+project(':ribbon-guice').name = 'vertafore-ribbon-guice'
+project(':ribbon').name = 'vertafore-ribbon'
+project(':ribbon-evcache').name = 'vertafore-ribbon-evcache'

@@ -1,12 +1,12 @@
 dependencies {
-    compile project(':ribbon-core')
-    compile project(':ribbon-transport')
-    compile project(':ribbon')
+    compile project(':vertafore-ribbon-core')
+    compile project(':vertafore-ribbon-transport')
+    compile project(':vertafore-ribbon')
     compile 'com.google.inject:guice:4.0'
     compile 'com.google.inject.extensions:guice-multibindings:4.0'
     testCompile 'junit:junit:4.11'
     testCompile "io.reactivex:rxjava:${rx_java_version}"
     testCompile "io.reactivex:rxnetty:${rx_netty_version}"
-    testCompile (project(':ribbon-examples')) {transitive=false}
+    testCompile (project(':vertafore-ribbon-examples')) {transitive=false}
     testCompile "com.netflix.archaius:archaius-core:${archaius_version}"
 }

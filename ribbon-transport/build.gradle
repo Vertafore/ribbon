@@ -1,6 +1,6 @@
 dependencies {
-    compile project(':ribbon-core')
-    compile project(':ribbon-loadbalancer')
+    compile project(':vertafore-ribbon-core')
+    compile project(':vertafore-ribbon-loadbalancer')
     compile "io.reactivex:rxjava:${rx_java_version}"
     compile "io.reactivex:rxnetty:${rx_netty_version}"
     compile "io.reactivex:rxnetty-contexts:${rx_netty_version}"
@@ -12,6 +12,6 @@ dependencies {
     testCompile 'junit:junit:4.11'
     testCompile "com.sun.jersey:jersey-server:${jersey_version}"
     testCompile 'com.google.mockwebserver:mockwebserver:20130706'
-    testCompile project(':ribbon-eureka')
-    testCompile project(':ribbon-test')
+    testCompile project(':vertafore-ribbon-eureka')
+    testCompile project(':vertafore-ribbon-test')
 }
